@@ -33,10 +33,6 @@ export class JogoDaForca {
         this.txtPalavraParcial = txtPalavraParcial;
         this.notificacao = notificacao;
         this.imagemForca = imagemForca;
-        this.letrasDescobertas = new Array();
-        this.tentativa = 0;
-        this.palavraSecreta = this.ObterpalavraSercreta();
-        this.IniciarPalavraParcial();
     }
     Chutar() {
         let chute = this.areaTexto.value;
@@ -86,6 +82,13 @@ export class JogoDaForca {
             this.JogadorVenceu();
             return;
         }
+    }
+    IniciarJogo() {
+        this.letrasDescobertas = new Array();
+        this.tentativa = 0;
+        this.palavraSecreta = this.ObterpalavraSercreta();
+        console.log(this.palavraSecreta);
+        this.IniciarPalavraParcial();
     }
     ObterPalavraCompleta() {
         const PalavraParcial = this.txtPalavraParcial.textContent;
