@@ -9,6 +9,8 @@ class TelaDoJogo {
         this.notificacao = document.getElementById('notificacaoDerrota');
         this.btnJogarNovamente = document.getElementById('btnJogarNovamente');
         this.btnChutar = document.getElementById('btnChutar');
+        this.jogo = new JogoDaForca(this.areaTexto, this.buttons, this.txtPalavraParcial, this.notificacao, this.imagemForca);
+        this.jogo.IniciarJogo();
         this.registrarEventos();
     }
     registrarEventos() {
@@ -23,7 +25,6 @@ class TelaDoJogo {
         this.btnChutar.addEventListener('click', () => this.Chutar());
     }
     Chutar() {
-        this.jogo = new JogoDaForca(this.areaTexto, this.buttons, this.txtPalavraParcial, this.notificacao, this.imagemForca);
         this.jogo.Chutar();
     }
     botaoClicado(evento) {

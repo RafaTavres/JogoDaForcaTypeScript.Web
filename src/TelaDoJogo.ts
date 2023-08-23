@@ -25,7 +25,8 @@ class TelaDoJogo{
         this.notificacao = document.getElementById('notificacaoDerrota') as HTMLDivElement;
         this.btnJogarNovamente = document.getElementById('btnJogarNovamente') as HTMLButtonElement;
         this.btnChutar = document.getElementById('btnChutar') as HTMLButtonElement;
-        
+        this.jogo = new JogoDaForca(this.areaTexto,this.buttons,this.txtPalavraParcial,this.notificacao,this.imagemForca)
+        this.jogo.IniciarJogo();
         this.registrarEventos();    
         
     }
@@ -43,8 +44,7 @@ class TelaDoJogo{
         this.btnChutar.addEventListener('click', () => this.Chutar())
     } 
     Chutar(){
-        this.jogo = new JogoDaForca(this.areaTexto,this.buttons,this.txtPalavraParcial,this.notificacao,this.imagemForca)
-        this.jogo.Chutar();
+       this.jogo.Chutar();
     }
     botaoClicado(evento : MouseEvent){
         const botaoClicado:HTMLButtonElement = evento.target as HTMLButtonElement;

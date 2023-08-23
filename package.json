@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "cp -r src/assets dist && tsc -w"
+    "start": "cp -r src/assets dist && tsc -w",
+    "build": "cp -r src/assets dist && tsc -w",
+    "publish": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",

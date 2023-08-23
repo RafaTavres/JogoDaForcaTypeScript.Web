@@ -49,17 +49,10 @@ export class JogoDaForca{
         this.buttons = buttons;
         this.txtPalavraParcial = txtPalavraParcial;
         this.notificacao = notificacao;
-        this.imagemForca = imagemForca;
-
-        this.letrasDescobertas = new Array();
-        this.tentativa = 0;
-        this.palavraSecreta = this.ObterpalavraSercreta();
-        this.IniciarPalavraParcial();
+        this.imagemForca = imagemForca;     
     }
 
-
-
-    Chutar(){
+    Chutar():void{
         let chute: string = this.areaTexto.value;
         let letraChute: string = chute.toUpperCase();
         console.log(chute);
@@ -123,6 +116,13 @@ export class JogoDaForca{
 
     }
 
+    IniciarJogo(): void{
+        this.letrasDescobertas = new Array();
+        this.tentativa = 0;
+        this.palavraSecreta = this.ObterpalavraSercreta();
+        console.log(this.palavraSecreta);
+        this.IniciarPalavraParcial();
+    }
 
 
     ObterPalavraCompleta(): string{
